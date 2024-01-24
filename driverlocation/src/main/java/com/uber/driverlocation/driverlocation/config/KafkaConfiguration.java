@@ -9,8 +9,8 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaConfiguration {
 
     @Bean
-    private NewTopic createTopic(){
-        return TopicBuilder.name(AppConstants.DRIVER_LOCATION_TOPIC)
+    public NewTopic createTopic(){
+        return TopicBuilder.name(ProducerAppConstants.DRIVER_LOCATION_TOPIC)
                 .partitions(3)
                 .replicas(1)
                 .build();

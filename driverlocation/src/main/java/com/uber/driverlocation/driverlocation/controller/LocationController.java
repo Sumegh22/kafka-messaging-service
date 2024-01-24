@@ -18,7 +18,9 @@ public class LocationController {
 
     @PostMapping("/update")
     public ResponseEntity<String> updateLocation(){
-        kafkaMessagingService.updateLocation("("+Math.random()*100+", "+Math.random()*100+")");
+        for (int i =0; i < 100000; i++){
+            kafkaMessagingService.updateLocation("("+Math.random()*100+", "+Math.random()*100+")");
+        }
         return new ResponseEntity<>("driver location updated", HttpStatus.OK);
     }
 }
