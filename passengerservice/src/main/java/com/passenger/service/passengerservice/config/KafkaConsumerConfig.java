@@ -11,7 +11,7 @@ public class KafkaConsumerConfig {
     Logger LOGGER = LoggerFactory.getLogger(KafkaConsumerConfig.class);
     @KafkaListener(topics = ConsumerAppConstants.DRIVER_LOCATION_TOPIC, groupId = ConsumerAppConstants.GROUP_ID)
     public void updatedDriverLocation( String newLocation){
-        LOGGER.info("received updated driver location {} ...", newLocation);
+        LOGGER.info("consumed updated driver location {} ...", newLocation);
     }
 
 }
